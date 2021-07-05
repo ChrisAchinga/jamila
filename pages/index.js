@@ -1,7 +1,7 @@
 import Layout from '../layouts/Layout'
 import Hero from '../components/landing/Hero'
 import LatestArticle from '../components/landing/LatestArticle'
-import RecentArticles from '../components/landing/RecentArticles'
+import PostCard from '../components/global/PostCard'
 import { getPosts } from '../lib/posts'
 
 const Home = ({ posts }) => {
@@ -9,7 +9,14 @@ const Home = ({ posts }) => {
     <Layout>
       <Hero />
       <LatestArticle />
-      <RecentArticles />
+      <section className='py-5'>
+        <h2 className='fw-bolder fs-5 mb-4 text-capitalize'>recent articles</h2>
+        <div className='row gx-5'>
+          {posts.map((post, index) => (
+            <PostCard key={index} post={post} />
+          ))}
+        </div>
+      </section>
     </Layout>
   )
 }

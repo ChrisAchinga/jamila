@@ -1,4 +1,6 @@
-const CategoryLabel = () => {
+import Link from 'next/link'
+
+const CategoryLabel = ({ children }) => {
   const colorKey = {
     Airline: 'primary',
     Aircraft: 'success',
@@ -8,7 +10,9 @@ const CategoryLabel = () => {
   }
 
   return (
-    <div className={`badge bg-${colorKey[children]}`}>
+    <div
+      className={`badge bg-${colorKey[children]} bg-gradient rounded-pill mb-2 text-uppercase`}
+    >
       <Link href={`/read/category/${children.toLowerCase()}`}>{children}</Link>
     </div>
   )
