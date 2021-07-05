@@ -2,11 +2,11 @@ import ArticleHead from './ArticleHead'
 import PreviewImage from './PreviewImage'
 import ArticleBody from './ArticleBody'
 
-const Article = ({ content }) => {
+const Article = ({ title, date, image, content }) => {
   return (
     <div className='col-lg-9'>
-      <ArticleHead />
-      <PreviewImage />
+      <ArticleHead title={title} date={date} />
+      <PreviewImage image={image} />
       <ArticleBody content={content} />
     </div>
   )

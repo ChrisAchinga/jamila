@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const Pagination = () => {
+const Pagination = ({ currentPage, numPages }) => {
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage = `/read/page/${currentPage - 1}`
