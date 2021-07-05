@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const PostCard = () => {
+const PostCard = ({image, name, }) => {
   return (
     <div className='col-lg-4 mb-5'>
       <div className='card h-100 shadow border-0'>
@@ -13,9 +13,11 @@ const PostCard = () => {
           alt='image here'
         />
         <div className='card-body p-4'>
-          <div className='badge bg-primary bg-gradient rounded-pill mb-2 text-uppercase'>
-            category
-          </div>
+          <Link href='/read/category/category-name'>
+            <div className='badge bg-primary bg-gradient rounded-pill mb-2 text-uppercase'>
+              category
+            </div>
+          </Link>
           <Link href='/read/a-great-article'>
             <a className='text-decoration-none link-dark stretched-link'>
               <div className='h5 card-title mb-3'>Article title</div>
