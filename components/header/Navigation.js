@@ -11,6 +11,7 @@ const Navigation = () => {
             className='bi me-2'
             width={40}
             height={32}
+            alt='airspace logo'
           />
           <span className='fs-4 text-uppercase'>airspace</span>
         </a>
