@@ -38,16 +38,7 @@ const Pagination = ({ currentPage, numPages }) => {
               </li>
             </Link>
           )}
-          <li className='page-item'>
-            <a className='page-link' href='#'>
-              2
-            </a>
-          </li>
-          <li className='page-item'>
-            <a className='page-link' href='#'>
-              3
-            </a>
-          </li>
+          
         </ul>
       </nav>
     </div>

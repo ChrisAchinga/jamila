@@ -1,26 +1,26 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import Link from 'next/link'
+// import Link from 'next/link'
 import Layout from '../../layouts/Layout'
 import Author from '../../components/read/Author'
 import Article from '../../components/read/Article'
-import CategoryLabel from '../../components/global/CategoryLabel'
+
 
 const Read = ({
-  frontmatter: { title, category, date, cover_image, author, author_image },
+  frontmatter: { title, category, date, cover_image, author, author_image, excerpt },
   content,
   slug,
 }) => {
   return (
-    <Layout title={title}>
+    <Layout title={title} description={excerpt}>
       <section className='py-5'>
         <div className='container px-5 my-5'>
           <div className='row gx-5'>
             {/* author image section */}
             <Author />
             {/* article body */}
-            <Article image={cover_image} title={title} date={date} content={content} />
+            <Article image={cover_image} title={title} date={date} content={content} category={category} />
           </div>
         </div>
       </section>

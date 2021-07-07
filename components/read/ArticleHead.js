@@ -1,4 +1,6 @@
-const ArticleHead = ({title, date}) => {
+import CategoryLabel from '../../components/global/CategoryLabel'
+
+const ArticleHead = ({title, date, category}) => {
   return (
     <header className='mb-4'>
       {/* <!-- Post title--> */}
@@ -6,12 +8,14 @@ const ArticleHead = ({title, date}) => {
       {/* <!-- Post meta content--> */}
       <div className='text-muted fst-italic mb-2'>{date}</div>
       {/* <!-- Post categories--> */}
-      <a
+      <CategoryLabel>
+        {category}
+      </CategoryLabel>
+      {/* <a
         className='badge bg-secondary text-decoration-none link-light'
         href='#!'
       >
-        Web Design
-      </a>
+      </a> */}
     </header>
   )
 }
