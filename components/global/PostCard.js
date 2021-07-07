@@ -14,7 +14,7 @@ const PostCard = ({ post, compact }) => {
           alt='image here'
         />
         <div className='card-body p-4'>
-          <Link href='/read/category/category-name'>
+          <Link href='/read/category/category-name' passHref>
             <CategoryLabel>{post.frontmatter.category}</CategoryLabel>
           </Link>
           <Link href={`/read/${post.slug}`}>

@@ -14,27 +14,27 @@ const Pagination = ({ currentPage, numPages }) => {
         <ul className='pagination'>
           {/* previous page */}
           {!isFirst && (
-            <Link href={prevPage}>
+            <Link href={prevPage} passHref>
               <li className='page-item'>
-                <a className='page-link'>Previous</a>
+                <span className='page-link'>Previous</span>
               </li>
             </Link>
           )}
 
           {/* page numbers */}
           {Array.from({ length: numPages }, (_, i) => (
-            <Link href={`/read/page/${i + 1}`}>
+            <Link href={`/read/page/${i + 1}`} passHref>
               <li className='page-item'>
-                <a className='page-link'>{i + 1}</a>
+                <span className='page-link'>{i + 1}</span>
               </li>
             </Link>
           ))}
 
           {/* next page */}
           {!isLast && (
-            <Link href={nextPage}>
+            <Link href={nextPage} passHref>
               <li className='page-item'>
-                <a className='page-link'>Next</a>
+                <span className='page-link'>Next</span>
               </li>
             </Link>
           )}
