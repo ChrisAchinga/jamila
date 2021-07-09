@@ -1,8 +1,14 @@
 import Head from 'next/head'
-import Header from '@/components/Header'
-import Search from '@/components/Search'
+import Navigation from '@/components/globals/Navigation'
 
-const Layout = ({ title, keywords, description, children, pageURL }) => {
+const PageLayout = ({
+  children,
+  title,
+  keywords,
+  description,
+  pageURL,
+  image,
+}) => {
   return (
     <div>
       <Head>
@@ -10,22 +16,22 @@ const Layout = ({ title, keywords, description, children, pageURL }) => {
         <meta name='description' content={description} />
         <meta property='og:title' content={title} />
         <meta property='og:description' content={description} />
+        <meta property='og:image' content={image} />
         <meta property='og:url' content={pageURL} />
         <meta property='og:type' content='website' />
         <title>{title}</title>
       </Head>
-      <Header />
-      <Search />
-      <main className='container mx-auto my-7'>{children}</main>
+      <main>{children}</main>
     </div>
   )
 }
 
-export default Layout
+export default PageLayout
 
 Layout.defaultProps = {
   title: 'AirSpace | Aviation Blog',
   keywords: 'Aviation, Airbus, Boeing, Airlines, Airports, Air Travel',
   description:
     'Aviation Blog Website, with articles on Airlines and Aircraft types, and commercial air travel',
+  image: '/images/base.jpg',
 }
