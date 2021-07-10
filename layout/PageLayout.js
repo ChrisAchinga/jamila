@@ -1,5 +1,7 @@
 import Head from 'next/head'
-import Navigation from '@/components/globals/Navigation'
+import Navigation from '@/components/layout/Navigation'
+import Footer from '@/components/layout/Footer'
+
 
 const PageLayout = ({
   children,
@@ -21,14 +23,16 @@ const PageLayout = ({
         <meta property='og:type' content='website' />
         <title>{title}</title>
       </Head>
-      <main>{children}</main>
+      <Navigation />
+      <main classname='container'>{children}</main>
+      <Footer />
     </div>
   )
 }
 
 export default PageLayout
 
-Layout.defaultProps = {
+PageLayout.defaultProps = {
   title: 'AirSpace | Aviation Blog',
   keywords: 'Aviation, Airbus, Boeing, Airlines, Airports, Air Travel',
   description:
